@@ -1,0 +1,12 @@
+#heading{
+    color: red;
+}
+
+#parent{
+    color: blue;
+    border-width: 1;
+    border-radius: 2;
+}
+h2{
+    color: green;
+}

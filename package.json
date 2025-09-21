@@ -1,0 +1,37 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "this is namaste react i am learning ",
+  "keywords": [
+    "react",
+    "narasimha",
+    "open",
+    "gangam",
+    "style"
+  ],
+  "homepage": "https://github.com/narasimha4929/namaste-inception#readme",
+  "bugs": {
+    "url": "https://github.com/narasimha4929/namaste-inception/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/narasimha4929/namaste-inception.git"
+  },
+  "license": "ISC",
+  "author": "Narasimha Reddy",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest "
+  },
+  "devDependencies": {
+    "parcel": "~2.16.0"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "browserslist":[
+    "last 2 chrome versions",
+    "last 2 chrome firefox versions"
+  ]
+}

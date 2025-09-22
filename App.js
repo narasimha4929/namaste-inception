@@ -1,33 +1,54 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const parent = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement("div", { id: "child" }, [
-    React.createElement(
-      "h1",
-      { key: "h1-1" },
-      "This is inside the div->div->h1"
-    ),
-    React.createElement(
-      "h2",
-      { key: "h2-1" },
-      "This is inside the div->div->h2"
-    ),
-    React.createElement(
-      "h1",
-      { key: "h1-2" },
-      "This is inside the div->div->h1"
-    ),
-    React.createElement(
-      "h2",
-      { key: "h2-2" },
-      "This is inside the div->div->h2"
-    ),
-  ])
+//React.createElement(heading) this is an object
+//render(heading) - > converts to element
+
+const elem = <span>React SPAN BRO</span>
+const heading = React.createElement("h1",{id:"heading"},"Namaste React");
+
+console.log(heading);
+
+//jsx is html like HTML (NOT HTML)
+//this jsx transpiled before going to render by parcel,
+//with the help of BABEL
+
+const jsxHeading = (<h1 
+  className="rot" 
+  tabIndex={1}> 
+   Namaste JSX 🚀 
+   </h1>
+   )
+
+console.log(jsxHeading);
+
+
+const Title = () => (
+  <div>
+    {elem}
+    <h1>I AM TITLE</h1>
+  </div>
 );
 
+//React Functional component
+//component composition(component inside another component )
+
+console.log(Title);
+
+const number =1000;
+const Headingcomponent = () => (
+  <div id="container">
+    {Title()}
+    <div>{heading}</div>
+    <h1 className="heading">namaste react Functioal Component</h1>
+  </div>
+);
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-console.log(parent);
-root.render(parent);
+
+root.render(
+  <>
+<Headingcomponent />
+  </>
+);

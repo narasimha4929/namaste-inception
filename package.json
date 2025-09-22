@@ -21,7 +21,9 @@
   "author": "Narasimha Reddy",
   "type": "commonjs",
   "scripts": {
-    "test": "jest "
+    "test" :"jest ",
+    "start":"npx parcel index.html",
+    "build":"parcel build index.html"
   },
   "devDependencies": {
     "parcel": "~2.16.0"

@@ -1,15 +1,43 @@
-#heading{
-    color: red;
+.Header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
 }
 
-#parent{
-    color: blue;
-    border-width: 1;
-    border-radius: 2;
+.logo{
+    height: 100px;
+    width: 110px;
 }
-h2{
-    color: green;
+
+.NavItems>ul{
+    font-size: 20px;
+    display: flex;
+    padding:0px 20px ;
+    list-style-type: none;
 }
-.rot{
-    color:pink
+
+.NavItems>ul>li{
+    padding: 10px;
+    margin:10px;
+}
+.res-card{
+    width:220px;
+    height:380px;
+    border:1px solid black;
+    padding: 5px;
+}
+.res-card:hover{
+    border:3px solid brown;
+    cursor: pointer;
+}
+.search{
+    padding: 10px;
+}
+.res-logo{
+    width:200
+}
+.resto-container{
+    gap: 20;
+    display: flex;
+    flex-wrap: wrap;
 }

@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 const Header = () => {
+  const[login,setlogin] = useState(true);
+  console.log("header rendered");
   return (
     <div className="Header">
       <div className="Logo-container">
@@ -16,6 +20,9 @@ const Header = () => {
           <li>About US</li>
           <li>Contact</li>
           <li>Cart</li>
+          <button className="login" onClick={()=>{setlogin(!login)}}>
+            {login?"Login":"Logout"}
+            </button>
         </ul>
       </div>
     </div>

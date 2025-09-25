@@ -3,6 +3,11 @@ import RestaruntCard from "./RestaruntCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 
+//never create useState outside of the component
+//useState is used for creating local state variables inside the functional component
+//better used when at the top
+//and never create useState in if else block and inside for loop
+
 const Body = () => {
 //Local state variable -super Powerful variable
 
@@ -19,6 +24,7 @@ const fetchdata = async()=>{
   const data = await fetch(
     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.519421662049204&lng=78.38479444384575&collection=83639&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null"
   );
+
   const json = await data.json();
   
   console.log(json.data.cards[3].card.card);

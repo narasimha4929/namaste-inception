@@ -52,5 +52,11 @@
    UseEffect()
 
 
+ 2 - Types of Routing  
+
+ 1. Server Side Routing
+ 2. Client Side Routing 
+
+
 
 

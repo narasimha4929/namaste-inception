@@ -21,18 +21,19 @@
   "author": "Narasimha Reddy",
   "type": "commonjs",
   "scripts": {
-    "test" :"jest ",
-    "start":"npx parcel index.html",
-    "build":"parcel build index.html"
+    "test": "jest ",
+    "start": "npx parcel index.html",
+    "build": "parcel build index.html"
   },
   "devDependencies": {
     "parcel": "~2.16.0"
   },
   "dependencies": {
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.2"
   },
-  "browserslist":[
+  "browserslist": [
     "last 2 chrome versions",
     "last 2 chrome firefox versions"
   ]

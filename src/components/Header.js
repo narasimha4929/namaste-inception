@@ -28,7 +28,7 @@ const Header = () => {
       </div>
       <div className="NavItems">
         <ul>
-          <li>online status :{online?"✅":"❤️"}</li>
+          <li>online status :{online ? "✅" : "❤️"}</li>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -39,10 +39,10 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Link to="cart">Cart</Link>
+            <Link to="/grocery">Grocery</Link>
           </li>
           <li>
-            <Link to="/restarunts">Menu</Link>
+            <Link to="/restarunts/:resid">Menu</Link>
           </li>
           <button
             className="login"

@@ -20,6 +20,7 @@ const Restararantmenu = () => {
     //         console.log(json)
     // }
     const recipe = useResturantMenu(resid);
+    console.log("ressss"+recipe);
         // useEffect(() => {
         //   if (tell) {
         //     setreceipe(tell);

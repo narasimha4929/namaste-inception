@@ -1,26 +1,35 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router';
+import useResturantMenu from '../../utils/useResturantMenu';
 
 
 
 const Restararantmenu = () => {
     const { resid } = useParams();
-    const [recipe, setreceipe] = useState(null);
-    useEffect(()=>{
-        fetchMenu();
-    },[resid])
+    //const [recipe, setreceipe] = useState(null);
+    // useEffect(()=>{
+    //     fetchMenu();
+    // },[resid])
 
-    const fetchMenu = async()=>{
-            const data = await fetch(`https://dummyjson.com/recipes/${resid}`);
-            const json = await data.json()
-            setreceipe(json);
+    // const fetchMenu = async()=>{
+    //         const data = await fetch(`https://dummyjson.com/recipes/${resid}`);
+    //         const json = await data.json()
+    //         setreceipe(json);
 
-            console.log(json)
-    }
+    //         console.log(json)
+    // }
+    const recipe = useResturantMenu(resid);
+        // useEffect(() => {
+        //   if (tell) {
+        //     setreceipe(tell);
+        //   }
+        // }, [tell]);
+
        if (!recipe) {
          return <div>Loading...</div>;
        }
+       console.log(recipe.data);
     return (
       <div className="menu">
         <h1>{recipe.name}</h1>

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-
+import useOnlineStatus from "../../utils/useOnlineStatus";
 const Header = () => {
   const[login,setlogin] = useState(true);
   console.log("header rendered");
+  const online = useOnlineStatus();
 
 
   //if no dependency array =>useEffect called on every render.
@@ -27,6 +28,7 @@ const Header = () => {
       </div>
       <div className="NavItems">
         <ul>
+          <li>online status :{online?"✅":"❤️"}</li>
           <li>
             <Link to="/">Home</Link>
           </li>

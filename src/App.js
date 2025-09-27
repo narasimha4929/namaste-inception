@@ -9,6 +9,9 @@ import Error from "./components/Error";
 import Cart from "./components/Cart";
 import Restararantmenu from "./components/Restararantmenu";
 
+//chunking( or )code splitting( or )dynamic importing ( or )Lazy loading
+//
+
 const AppLayout =() =>{
   return(
     <div className ="App">

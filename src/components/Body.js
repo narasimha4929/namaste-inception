@@ -2,6 +2,7 @@ import RestaruntCard from "./RestaruntCard";
 
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from '../../utils/useOnlineStatus';
 
 //never create useState outside of the component
 //useState is used for creating local state variables inside the functional component
@@ -80,52 +81,58 @@ const fetchdata = async()=>{
 
 }
 
-//conditional Rendering
+const onlinestatus = useOnlineStatus()
+if (!onlinestatus){
+  return<h1>You are in offline Bro</h1>
+}
+  //conditional Rendering
 
-return listofRest.length === 0 ? (
-  <Shimmer />
-) : (
-  <div className="Body">
-    <div className="filter">
-      <div className="search">
-        <input
-          type="text"
-          className="search-box"
-          value={searchtext}
-          onChange={(e) => setSearchText(e.target.value)}
-        />
+  return listofRest.length === 0 ? (
+    <Shimmer />
+  ) : (
+    <div className="Body">
+      <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchtext}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+          <button
+            onClick={() => {
+              //Filter the restarunt and update the UI
+              //search Text
+              const filtered = listofRest.filter((item) =>
+                item.name.toLowerCase().includes(searchtext.toLowerCase())
+              );
+
+              setFilteredRest(filtered);
+
+              // setListOfRest(filtered):setListOfRest(listofRest);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
+          className="filter-btn"
           onClick={() => {
-            //Filter the restarunt and update the UI
-            //search Text
-            const filtered = listofRest.filter((item) =>
-              item.name.toLowerCase().includes(searchtext.toLowerCase())
+            setListOfRest(
+              listofRest.filter((item) => item.avgRatingString > 4)
             );
-
-            setFilteredRest(filtered);
-
-            // setListOfRest(filtered):setListOfRest(listofRest);
           }}
         >
-          Search
+          TOP RATED RESTARUNT
         </button>
       </div>
-      <button
-        className="filter-btn"
-        onClick={() => {
-          setListOfRest(listofRest.filter((item) => item.avgRatingString > 4));
-        }}
-      >
-        TOP RATED RESTARUNT
-      </button>
+      <div className="resto-container">
+        {filteredrest.map((item) => (
+          <RestaruntCard key={item.id} data={item} />
+        ))}
+      </div>
     </div>
-    <div className="resto-container">
-      {filteredrest.map((item) => (
-        <RestaruntCard key={item.id} data={item} />
-      ))}
-    </div>
-  </div>
-);
+  );
 }
 
 export default Body;

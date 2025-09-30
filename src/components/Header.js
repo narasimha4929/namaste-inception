@@ -16,10 +16,10 @@ const Header = () => {
   },[])
 
   return (
-    <div className="Header">
+    <div className="flex">
       <div className="Logo-container">
         <img
-          className="logo"
+          className="w-28"
           src="https://marketplace.canva.com/EAFpeiTrl4c/2/0/1600w/canva-abstract-chef-cooking-restaurant-free-logo-a1RYzvS1EFo.jpg"
           height={100}
           width={100}
@@ -27,7 +27,7 @@ const Header = () => {
         />
       </div>
       <div className="NavItems">
-        <ul>
+        <ul className="flex shadow-dark-400">
           <li>online status :{online ? "✅" : "❤️"}</li>
           <li>
             <Link to="/">Home</Link>

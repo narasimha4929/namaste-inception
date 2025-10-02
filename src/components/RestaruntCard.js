@@ -63,4 +63,20 @@ const RestaruntCard = (props) => {
   );
 };
 
+//Higher order component
+//it is a component that wraps another component and returns a new component
+//it is used to add additional functionality to a component
+//it is used to add additional functionality to a component
+
+export const withPromotedLabel = (RestaruntCard) => {
+  return(props)=>{
+    return(
+      <div>
+        <label>Promoted</label>
+        <RestaruntCard {...props}/>
+      </div>
+    )
+  }
+}
+
 export default RestaruntCard;

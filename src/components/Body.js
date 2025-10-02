@@ -2,6 +2,7 @@ import RestaruntCard from "./RestaruntCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../../utils/useOnlineStatus";
+import { withPromotedLabel } from "./RestaruntCard";
 
 //never create useState outside of the component
 //useState is used for creating local state variables inside the functional component
@@ -14,6 +15,7 @@ const Body = () => {
   const [listofRest, setListOfRest] = useState([]);
   const [filteredrest, setFilteredRest] = useState([]);
   const [searchtext, setSearchText] = useState("");
+  const PromotedRestaruntCard = withPromotedLabel(RestaruntCard);
 
   useEffect(() => {
     console.log("useeffect called bro");
@@ -133,9 +135,13 @@ const Body = () => {
           </button>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filteredrest.map((item) => (
-            <RestaruntCard key={item.id} data={item} />
-          ))}
+          {filteredrest.map((item) =>
+            filteredrest?.card?.card?.info?.promoted ? (
+              <PromotedRestaruntCard key={item.id} data={item} />
+            ) : (
+              <RestaruntCard key={item.id} data={item} />
+            )
+          )}
         </div>
       </div>
     </div>
